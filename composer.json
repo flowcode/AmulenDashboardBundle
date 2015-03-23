@@ -1,0 +1,22 @@
+{
+    "name": "flowcode/amulen-dashboard-bundle",
+    "description": "Description of project AmulenDashboardBundle.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Manuel Aguero",
+            "email": "jaguero@flowcode.com.ar"
+        },
+        {
+            "name": "Francisco Memoli Olmos",
+            "email": "fmemoli@flowcode.com.ar"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.3",
+        "symfony/twig-bundle": "~2.3",
+        "symfony/form": "~2.3",
+        "symfony/security-bundle": "~2.3"
+    }
+}
