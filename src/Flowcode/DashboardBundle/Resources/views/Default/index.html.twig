@@ -8,67 +8,29 @@
             Dashboard
             <small>Control panel</small>
         </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ol>
+        <p>
+            {{'Today is'|trans}} {{ datime }}
+        </p>
     </section>
+
     <!-- Main content -->
     <section class="content">
 
         <div class="row">
-            <div class="col-sm-5">
-                <div class="row">
-                    <div class="col-sm-6 tile">
-                        <a class="btn btn-primary btn-block" href="{{ url('admin_post') }}">
-                            <div><i class="fa fa-bullhorn"></i></div>
-                                {{ 'News'|trans }}
-                        </a>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>150</h3>
+                        <p>{{ 'news'|trans }}</p>
                     </div>
-                    <div class="col-sm-6 tile">
-                        <a class="btn btn-primary btn-block" href="{{ url('admin_shop_dashboard') }}">
-                            <div><i class="fa fa-shopping-cart"></i></div>
-                                {{ 'Shop'|trans }}
-                        </a>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
                     </div>
-                    <div class="col-sm-6 tile">
-                        <a class="btn btn-primary btn-block" href="{{ url('admin_media_dashboard') }}">
-                            <div><i class="fa fa-picture"></i></div>
-                                {{ 'Multimedia'|trans }}
-                        </a>
-                    </div>
-                    <div class="col-sm-6 tile">
-                        <a class="btn btn-primary btn-block" href="{{ url('admin_page') }}">
-                            <div><i class="fa fa-leaf"></i></div>
-                                {{ 'Pages'|trans }}
-                        </a>
-                    </div>
-                    <div class="col-sm-6 tile">
-                        <a class="btn btn-primary btn-block" href="{{ url('admin_user_dashboard') }}">
-                            <div><i class="fa fa-user"></i></div>
-                                {{ 'Users'|trans }}
-                        </a>
-                    </div>
-                    <div class="col-sm-6 tile">
-                        <a class="btn btn-primary btn-block" href="{{ url('admin_classification') }}">
-                            <div><i class="fa fa-user"></i></div>
-                                {{ 'classification'|trans|capitalize }}
-                        </a>
-                    </div>
+                    <a href="{{ url('admin_post') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
-            </div>
-            <div class="col-sm-7">
-                <div>
-                    <span></span>
-                </div>
-                <div class="jumbotron">
-                    <h2>{{ 'welcome'|trans|capitalize }}</h2>
-                    <p>{{'Today is'|trans}} {{ datime }}</p>
-                </div>
-                <div>
-                    <h3>Lastest news</h3>
-                </div>
-            </div>
+            </div><!-- ./col -->
+
         </div>
 
     </section>
