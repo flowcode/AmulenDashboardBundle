@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Amulen - Administration{% endblock %}</title>
         {% block stylesheets %}
-            <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
-            <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />    
+            <link href="{{ asset('bundles/flowcodedashboard/css/ionicons.min.css') }}" rel="stylesheet" media="screen">
+            <link href="{{ asset('bundles/flowcodedashboard/css/font-awesome.css') }}" rel="stylesheet" media="screen">
+            <link href="{{ asset('bundles/flowcodedashboard/css/bootstrap.css') }}" rel="stylesheet" media="screen">
             <link href="{{ asset('bundles/flowcodedashboard/css/AdminLTE.min.css') }}" rel="stylesheet" />
             <link href="{{ asset('bundles/flowcodedashboard/css/skins/skin-red.css') }}" rel="stylesheet" />
 
@@ -98,7 +99,7 @@
                         <li class="header">MAIN NAVIGATION</li>
                         <li>
                             <a href="{{ url('admin_dashboard') }}">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="treeview">
