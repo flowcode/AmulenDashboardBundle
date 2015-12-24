@@ -23,7 +23,7 @@
             <link href="{{ asset('bundles/flowcodedashboard/css/admin.css') }}" rel="stylesheet" />
             <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
         {% endblock %}
-        <link rel="icon" type="image/png" href="{{ asset('bundles/flowcodedashboard/images/flowcode-fav-oficial-alpha.png') }}" />
+        <link rel="icon" type="image/png" href="{{ asset('bundles/flowcodedashboard/images/logo.png') }}" />
 
     </head>
     <body class="skin-red">
@@ -31,7 +31,9 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="index2.html" class="logo"><i class="fa fa-forward"></i> Amulen</a>
+                <a href="index2.html" class="logo">
+                    <img src="{{ asset('bundles/flowcodedashboard/images/logo_vertical_white.png') }}" class="img-responsive" width="150">
+                </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -166,9 +168,9 @@
             </div>
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.0
+                    <b>Version</b> {{ app_version }}
                 </div>
-                Desarrollado por <a href="http://flowcode.com.ar" target="_blank"><img src="{{ asset('bundles/flowcodedashboard/images/flowcode-logo-oficial.png') }}" width="100"></a>
+                With <i class="fa fa-heart"></i> by <a href="http://flowcode.com.ar" target="_blank"><img src="{{ asset('bundles/flowcodedashboard/images/flowcode-fav-oficial-alpha.png') }}" width="35"></a>
             </footer>
         </div>
 
