@@ -4,6 +4,9 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
+# Ignore Mac DS_Store files
+.DS_Store
+
 # Cache and logs (Symfony3)
 /var/cache/*
 /var/logs/*
