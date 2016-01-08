@@ -101,10 +101,16 @@
                                 <i class="fa fa-bullhorn"></i> <span>{{ 'News'|trans }}</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ url('admin_shop_dashboard') }}">
+                        <li class="treeview">
+                            <a href="#">
                                 <i class="fa fa-shopping-cart"></i> <span>{{ 'Shop'|trans }}</span>
+                                <i class="fa fa-angle-left pull-right"></i>
                             </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{ url('admin_product') }}"><i class="fa fa-tag"></i> {{ 'products'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_shop_category') }}"><i class="fa fa-list-alt"></i> {{ 'categories'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_order') }}"><i class="fa fa-list-alt"></i> {{ 'orders'|trans|capitalize }}</a></li>
+                            </ul>
                         </li>
                         <li class="treeview">
                             <a href="{{ url('admin_media_dashboard') }}">
@@ -135,6 +141,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="{{ url('admin_user') }}"><i class="fa fa-tag"></i> {{ 'users'|trans|capitalize }}</a></li>
                                 <li><a href="{{ url('admin_usergroup') }}"><i class="fa fa-list-alt"></i> {{ 'user groups'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_role') }}"><i class="fa fa-list-alt"></i> {{ 'roles'|trans|capitalize }}</a></li>
                             </ul>
                         </li>
                     </ul>
