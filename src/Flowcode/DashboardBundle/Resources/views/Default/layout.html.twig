@@ -47,21 +47,21 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-user"></i>
-                                    <span class="hidden-xs">{{ app.user.username|capitalize }}</span>
+                                    <span class="hidden-xs">{{ app.user.username|title }}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
                                         <i class="fa fa-user"></i>
                                         <p>
-                                            {{ app.user.username|capitalize }} - admin
-                                            <small>Member since Nov. 2012</small>
+                                            {{ app.user.getHappyName|title }}
+                                            <small>Member since Nov. {{app.user.created|date("Y")}}</small>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="{{ path('admin_user_profile_show') }}" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="{{ path('admin_profile_show') }}" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="{{ path('flowcode_admin_user_logout') }}" class="btn btn-default btn-flat">Sign out</a>
@@ -91,9 +91,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ url('admin_tag') }}"><i class="fa fa-tag"></i> {{ 'tags'|trans }}</a></li>
-                                <li><a href="{{ url('admin_category') }}"><i class="fa fa-list-alt"></i> {{ 'categorys'|trans }}</a></li>
-                                <li><a href="{{ url('admin_collection') }}"><i class="fa fa-list"></i> {{ 'collections'|trans }}</a></li>
+                                <li><a href="{{ url('admin_tag') }}">{{ 'tags'|trans }}</a></li>
+                                <li><a href="{{ url('admin_category') }}">{{ 'categorys'|trans }}</a></li>
+                                <li><a href="{{ url('admin_collection') }}">{{ 'collections'|trans }}</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -107,9 +107,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ url('admin_product') }}"><i class="fa fa-tag"></i> {{ 'products'|trans|capitalize }}</a></li>
-                                <li><a href="{{ url('admin_shop_category') }}"><i class="fa fa-list-alt"></i> {{ 'categories'|trans|capitalize }}</a></li>
-                                <li><a href="{{ url('admin_order') }}"><i class="fa fa-list-alt"></i> {{ 'orders'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_product') }}">{{ 'products'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_shop_category') }}">{{ 'categories'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_order') }}">{{ 'orders'|trans|capitalize }}</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -118,9 +118,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ url('admin_gallery') }}"><i class="fa fa-tag"></i> {{ 'gallerys'|trans }}</a></li>
-                                <li><a href="{{ url('admin_media_browser') }}"><i class="fa fa-list-alt"></i> {{ 'media files'|trans }}</a></li>
-                                <li><a href="{{ url('admin_page') }}"><i class="fa fa-list"></i> {{ 'collections'|trans }}</a></li>
+                                <li><a href="{{ url('admin_gallery') }}">{{ 'gallerys'|trans }}</a></li>
+                                <li><a href="{{ url('admin_media_browser') }}">{{ 'media files'|trans }}</a></li>
+                                <li><a href="{{ url('admin_page') }}">{{ 'collections'|trans }}</a></li>
                             </ul>
                         </li>
                         <li>
@@ -130,18 +130,18 @@
                         </li>
                         <li>
                             <a href="{{ url('admin_menu') }}">
-                                <i class="fa fa-leaf"></i> <span>{{ 'Menus'|trans }}</span>
+                                <i class="fa fa-sitemap"></i> <span>{{ 'Menus'|trans }}</span>
                             </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ url('admin_user_dashboard') }}">
+                            <a href="#">
                                 <i class="fa fa-user"></i> <span>{{ 'users'|trans|capitalize }}</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ url('admin_user') }}"><i class="fa fa-tag"></i> {{ 'users'|trans|capitalize }}</a></li>
-                                <li><a href="{{ url('admin_usergroup') }}"><i class="fa fa-list-alt"></i> {{ 'user groups'|trans|capitalize }}</a></li>
-                                <li><a href="{{ url('admin_role') }}"><i class="fa fa-list-alt"></i> {{ 'roles'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_user') }}">{{ 'users'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_usergroup') }}">{{ 'user groups'|trans|capitalize }}</a></li>
+                                <li><a href="{{ url('admin_role') }}">{{ 'roles'|trans|capitalize }}</a></li>
                             </ul>
                         </li>
                     </ul>
