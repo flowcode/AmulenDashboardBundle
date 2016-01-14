@@ -61,10 +61,10 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="{{ path('admin_profile_show') }}" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="{{ path('admin_profile_show') }}" class="btn btn-default btn-flat">{{ 'Profile'|trans }}</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="{{ path('flowcode_admin_user_logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="{{ path('flowcode_admin_user_logout') }}" class="btn btn-default btn-flat">{{ 'Sign out'|trans }}</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -82,7 +82,7 @@
                     <ul class="sidebar-menu">
                         <li>
                             <a href="{{ url('admin_dashboard') }}">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                <i class="fa fa-dashboard"></i> <span>{{ 'Dashboard'|trans }}</span>
                             </a>
                         </li>
                         <li class="treeview">

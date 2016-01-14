@@ -5,8 +5,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Dashboard
-            <small>Control panel</small>
+            {{ 'Dashboard'|trans }}
+            <small>{{ 'Control panel'|trans }}</small>
         </h1>
         <p>
             {{'Today is'|trans}} {{ datime }}
@@ -27,7 +27,7 @@
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="{{ url('admin_post') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="{{ url('admin_post') }}" class="small-box-footer">{{ 'More info'|trans }}<i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div><!-- ./col -->
 
