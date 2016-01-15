@@ -21,13 +21,39 @@
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3>150</h3>
-                        <p>{{ 'news'|trans }}</p>
+                        <h3>{{ qtyProducts }}</h3>
+                        <p>{{ 'products'|trans|title }}</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-bag"></i>
+                        <i class="fa fa-shopping-cart"></i>
                     </div>
-                    <a href="{{ url('admin_post') }}" class="small-box-footer">{{ 'More info'|trans }}<i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="{{ url('admin_product') }}" class="small-box-footer">{{ 'More info'|trans }} <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-olive">
+                    <div class="inner">
+                        <h3>{{ qtyCountries }}</h3>
+                        <p>{{ 'countries'|trans|title }}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                    <a href="{{ url('admin_country') }}" class="small-box-footer">{{ 'More info'|trans }} <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-maroon">
+                    <div class="inner">
+                        <h3>{{ qtyIndustries }}</h3>
+                        <p>{{ 'industries'|trans|title }}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-industry"></i>
+                    </div>
+                    <a href="{{ url('admin_industry') }}" class="small-box-footer">{{ 'More info'|trans }} <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div><!-- ./col -->
 
