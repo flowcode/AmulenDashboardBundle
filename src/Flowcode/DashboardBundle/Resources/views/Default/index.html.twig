@@ -18,42 +18,27 @@
 
         <div class="row">
             <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>{{ qtyProducts }}</h3>
-                        <p>{{ 'products'|trans|title }}</p>
+                <div class="box box-solid bg-teal-gradient">
+                    <div class="box-header">
+                        <h3 class="box-title">Pages</h3>
                     </div>
-                    <div class="icon">
-                        <i class="fa fa-shopping-cart"></i>
+                    <div class="box-body">
+                        <div class="text-center" style="font-size:1.5em;">
+                            Total views <br>
+                            <b>{{viewCount}}</b>
+                        </div>
+                        <h5>Top 5</h5>
+                        <table class="table table-condensed">
+                        {% for page in mostViewed %}
+                            <tr>
+                                <td>{{ page.name }}</td>
+                                <td><span class="badge">{{page.viewCount}}</span></td>
+                            </tr>
+                        {% endfor %}
+                        </table>
                     </div>
-                    <a href="{{ url('admin_product') }}" class="small-box-footer">{{ 'More info'|trans }} <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-olive">
-                    <div class="inner">
-                        <h3>{{ qtyCountries }}</h3>
-                        <p>{{ 'countries'|trans|title }}</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-map-marker"></i>
-                    </div>
-                    <a href="{{ url('admin_country') }}" class="small-box-footer">{{ 'More info'|trans }} <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-maroon">
-                    <div class="inner">
-                        <h3>{{ qtyIndustries }}</h3>
-                        <p>{{ 'industries'|trans|title }}</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-industry"></i>
-                    </div>
-                    <a href="{{ url('admin_industry') }}" class="small-box-footer">{{ 'More info'|trans }} <i class="fa fa-arrow-circle-right"></i></a>
+
+
                 </div>
             </div><!-- ./col -->
 

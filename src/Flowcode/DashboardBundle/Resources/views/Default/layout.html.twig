@@ -85,7 +85,7 @@
                                 <i class="fa fa-dashboard"></i> <span>{{ 'Dashboard'|trans }}</span>
                             </a>
                         </li>
-                        <li class="treeview" style="display:none;">
+                        <li class="treeview" >
                             <a href="#">
                                 <i class="fa fa-tags"></i> <span>{{ 'classification'|trans|capitalize }}</span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -96,7 +96,7 @@
                                 <li><a href="{{ url('admin_collection') }}">{{ 'collections'|trans }}</a></li>
                             </ul>
                         </li>
-                        <li class="treeview" style="display:none;">
+                        <li class="treeview" >
                             <a href="{{ url('admin_post') }}">
                                 <i class="fa fa-bullhorn"></i> <span>{{ 'News'|trans }}</span>
                             </a>
@@ -112,7 +112,7 @@
                                 <li><a href="{{ url('admin_order') }}">{{ 'orders'|trans|capitalize }}</a></li>
                             </ul>
                         </li>
-                        <li class="treeview" style="display:none;">
+                        <li class="treeview" >
                             <a href="{{ url('admin_media_dashboard') }}">
                                 <i class="fa fa-picture-o"></i> <span>{{ 'Multimedia'|trans }}</span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -120,27 +120,17 @@
                             <ul class="treeview-menu">
                                 <li><a href="{{ url('admin_gallery') }}">{{ 'gallerys'|trans }}</a></li>
                                 <li><a href="{{ url('admin_media_browser') }}">{{ 'media files'|trans }}</a></li>
-                                <li><a href="{{ url('admin_page') }}">{{ 'collections'|trans }}</a></li>
+                                <li><a href="{{ url('admin_media_select_media') }}">{{ 'add media'|trans }}</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ url('admin_page') }}" style="display:none;">
+                            <a href="{{ url('admin_page') }}" >
                                 <i class="fa fa-leaf"></i> <span>{{ 'Pages'|trans }}</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin_menu') }}" style="display:none;">
+                            <a href="{{ url('admin_menu') }}" >
                                 <i class="fa fa-sitemap"></i> <span>{{ 'Menus'|trans }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin_country') }}">
-                                <i class="fa fa-map-marker"></i> <span>{{ 'Country'|trans }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin_industry') }}">
-                                <i class="fa fa-industry"></i> <span>{{ 'Industry'|trans }}</span>
                             </a>
                         </li>
                         <li class="treeview">

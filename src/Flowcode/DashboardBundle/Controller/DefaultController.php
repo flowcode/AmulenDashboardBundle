@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Dashboard Class.
- * 
+ *
  * @Route("/admin")
  */
 class DefaultController extends Controller {
@@ -24,21 +24,15 @@ class DefaultController extends Controller {
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $products = $em->getRepository('AmulenShopBundle:Product')->findAll();
-        $countries = $em->getRepository('AppBundle:Country')->findAll();
-        $industries = $em->getRepository('AppBundle:Industry')->findAll();
-
-        $qtyProducts = count($products);
-        $qtyCountries = count($countries);
-        $qtyIndustries = count($industries);
+        $mostViewed = $em->getRepository("AmulenPageBundle:Page")->getMostViewed(5);
+        $viewCount = $em->getRepository("AmulenPageBundle:Page")->getTotalViewedCount();
 
         $today = date("d/m/Y H:m");
 
         return $this->render('FlowcodeDashboardBundle:Default:index.html.twig', array(
             "datime" => $today,
-            "qtyProducts" => $qtyProducts,
-            "qtyCountries" => $qtyCountries,
-            "qtyIndustries" => $qtyIndustries,
+            "mostViewed" => $mostViewed,
+            "viewCount" => $viewCount,
         ));
     }
 
