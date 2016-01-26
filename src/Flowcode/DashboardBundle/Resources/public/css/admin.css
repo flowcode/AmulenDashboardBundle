@@ -55,3 +55,47 @@ html, body {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+
+
+.slider-container{
+        height:210px; width: 800px; overflow: hidden;
+        position: relative;
+        background-color: black;
+    }
+.slider {
+    width: 2000px; position:relative; height:220px; left:0px;top:0px; display: block;
+}
+.slider li{
+     margin: 5px; 
+     width:200px; 
+     height: 200px; 
+     display:block; 
+     float:left;
+}
+.thumb-body{
+    text-align: center;
+    background-color: #ddd;
+    padding: 5px;
+}
+
+.slider-container .slider-control{
+    height: 210px;
+    width: 30px;
+    position: absolute;
+    display: block;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.slider-container .slider-control > i{
+    position: absolute;
+    top: 40%;
+    font-size: 30px;
+    color: whitesmoke;
+}
+.slider-container > .slider-left{
+    left: 0px;
+}
+.slider-container > .slider-right{
+    right: 0px;
+}
