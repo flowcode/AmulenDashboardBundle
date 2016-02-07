@@ -99,3 +99,12 @@ html, body {
 .slider-container > .slider-right{
     right: 0px;
 }
+
+.admin-menu{
+margin-top: 5px;
+}
+.admin-menu-item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px dashed #999;
+}
