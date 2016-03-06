@@ -96,10 +96,15 @@ html, body {
 .slider-container > .slider-left{
     left: 0px;
 }
+.slider-container > .slider-left i{
+    left: 10px;
+}
 .slider-container > .slider-right{
     right: 0px;
 }
-
+.slider-container > .slider-right i{
+    right: 10px;
+}
 .admin-menu{
 margin-top: 5px;
 }
