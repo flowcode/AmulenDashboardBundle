@@ -113,3 +113,49 @@ margin-top: 5px;
     padding-bottom: 10px;
     border-top: 1px dashed #999;
 }
+.select2.addButton, .dropdown.addButton {
+    float: left;
+    width: 80%;
+}
+
+select.select2 {
+    width: 100%;
+    background: #F4F4F4;
+    border: 1px solid #DDDDDD;
+    height: 34px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    background-color: white;
+    border: 1px solid #d2d6de;
+    cursor: text;
+    border-radius: 0px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border-color: #3c8dbc !important;
+}
+
+.select2-container--default .select2-selection--single {
+    border-color: #d2d6de;
+    border-radius: 0px;
+    height: 34px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #000 transparent transparent transparent;
+    border-width: 6px 3px 0 3px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: 0px;
+    width: 18px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding-left: 17px;
+}
+
+.select2-container {
+    width: 100%;
+}
