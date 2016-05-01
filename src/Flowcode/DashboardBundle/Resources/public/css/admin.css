@@ -159,3 +159,37 @@ select.select2 {
 .select2-container {
     width: 100%;
 }
+table.treeTable td {
+    border: 1px solid #eee;
+}
+.treeTable .level1 td:first-child {
+    padding-left: 15px;
+}
+.treeTable .level2 td:first-child {
+    padding-left: 30px;
+}
+.treeTable .level3 td:first-child {
+    padding-left: 60px;
+}
+.treeTable .level4 td:first-child {
+    padding-left: 90px;
+}
+.treeTable .collapse{
+    display: table-row;
+}
+.treeTable .collapse .toggle.fa-caret-right {
+    display: none;
+}
+.treeTable .expand .toggle.fa-caret-down {
+    display: none;
+}
+.treeTable a{
+    margin-left: 15px;
+}
+.treeTable .toggle {
+    height: 20px;
+    width: 10px;
+    display: inline-block;
+    font-size: 20px;
+    position: absolute;
+}
