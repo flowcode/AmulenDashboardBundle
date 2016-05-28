@@ -1,0 +1,25 @@
+{% for option in menuOptions %}
+    {% if option.submenu is defined %}
+        <li class="treeview">
+            <a href="{{ option.url }}">
+                <i class="{{ option.icon }}"></i> <span>{{ option.title|capitalize }}</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                {% for suboption in option.submenu %}
+                    <li>
+                        <a href="{{ suboption.url }}">
+                            {{ suboption.title|capitalize }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li>
+            <a href="{{ option.url }}">
+                <i class="{{ option.icon }}"></i> <span>{{ option.title }}</span>
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

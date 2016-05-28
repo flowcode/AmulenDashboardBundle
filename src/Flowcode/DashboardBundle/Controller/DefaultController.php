@@ -2,6 +2,10 @@
 
 namespace Flowcode\DashboardBundle\Controller;
 
+use Flowcode\DashboardBundle\Event\ListPluginsEvent;
+use Flowcode\DashboardBundle\Event\ShowMenuEvent;
+use Flowcode\DashboardBundle\Event\ShowMenuSubscriber;
+use Flowcode\DashboardBundle\Listener\ShowMenuListener;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -12,7 +16,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  *
  * @Route("/admin")
  */
-class DefaultController extends Controller {
+class DefaultController extends Controller
+{
 
     /**
      * Main Dashboard.
@@ -34,6 +39,36 @@ class DefaultController extends Controller {
             "mostViewed" => $mostViewed,
             "viewCount" => $viewCount,
         ));
+    }
+
+    public function menuAction()
+    {
+
+        $menuOptions = array();
+        $showMenuEvent = new ShowMenuEvent($menuOptions);
+
+        $dispatcher = $this->get('event_dispatcher');
+        $dispatcher->dispatch(ShowMenuEvent::NAME, $showMenuEvent);
+
+        return $this->render('FlowcodeDashboardBundle:Default:menu.html.twig', array(
+            "menuOptions" => $showMenuEvent->getMenuOptions(),
+        ));
+
+    }
+
+    public function pluginsAction()
+    {
+
+        $plugins = array();
+        $listPluginsEvent = new ListPluginsEvent($plugins);
+
+        $dispatcher = $this->get('event_dispatcher');
+        $dispatcher->dispatch(ListPluginsEvent::NAME, $listPluginsEvent);
+
+        return $this->render('FlowcodeDashboardBundle:Default:plugins.html.twig', array(
+            "plugins" => $listPluginsEvent->getPluginDescriptors(),
+        ));
+
     }
 
 }

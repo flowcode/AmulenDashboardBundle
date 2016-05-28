@@ -5,3 +5,9 @@ services:
 #    flowcode_dashboard.example:
 #        class: %flowcode_dashboard.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    amulen.dashboard.showmenu_eventsubscriber:
+        class: Flowcode\DashboardBundle\Event\ShowMenuSubscriber
+        arguments: ['@router', '@translator']
+        tags:
+            - { name: kernel.event_subscriber }

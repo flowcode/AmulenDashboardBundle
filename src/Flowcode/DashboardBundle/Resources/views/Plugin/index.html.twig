@@ -1,0 +1,70 @@
+{% extends 'FlowcodeDashboardBundle:Default:layout.html.twig' %}
+
+{% block body %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            {{ 'plugins'|trans|title }}
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-solid">
+            <div class="box-header">
+                <h3 class="box-title">
+                    {{ 'installed'|trans|title }}
+                </h3>
+            </div>
+            <div class="box-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>name</th>
+                        <th>version</th>
+                        <th>description</th>
+                        <th>settings</th>
+                        <th>authors</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for plugin in plugins %}
+                        <tr>
+                            <td>{{ plugin.image }}</td>
+                            <td>{{ plugin.name }}</td>
+                            <td>{{ plugin.version }}</td>
+                            <td>{{ plugin.description }}</td>
+                            <td>
+                                <a href="{{ plugin.settings }}">
+                                    Settings
+                                </a>
+                            </td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for author in plugin.authors %}
+                                        <li>
+                                            {{ author.name }}
+                                            {% if author.website is defined %}
+                                                <a href="{{ author.website }}" target="_blank"
+                                                   class="btn btn-link btn-xs">
+                                                    Website
+                                                </a>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}
