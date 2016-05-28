@@ -11,3 +11,6 @@ services:
         arguments: ['@router', '@translator']
         tags:
             - { name: kernel.event_subscriber }
+
+    amulen.dashboard.service.setting:
+        class: Flowcode\DashboardBundle\Service\SettingService

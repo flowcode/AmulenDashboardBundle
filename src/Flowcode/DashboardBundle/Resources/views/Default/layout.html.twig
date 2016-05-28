@@ -87,6 +87,9 @@
             <ul class="sidebar-menu">
                 {{ render(controller('FlowcodeDashboardBundle:Default:menu')) }}
 
+                <li class="header">
+                    {{ 'system'|trans|upper }}
+                </li>
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-user"></i> <span>{{ 'users'|trans|capitalize }}</span>
@@ -98,10 +101,9 @@
                         <li><a href="{{ url('admin_role') }}">{{ 'roles'|trans|capitalize }}</a></li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="{{ url('admin_plugin') }}">
-                        {{ 'plugins'|trans|capitalize }}
+                        <i class="fa fa-plug"></i> <span>{{ 'plugins'|trans|capitalize }}</span>
                     </a>
                 </li>
             </ul>
@@ -135,7 +137,7 @@
     </div>
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> {{ app_version }}
+            <b>Version</b> {{ amulen_version.currentVersion }}
         </div>
         With <i class="fa fa-heart"></i> by <a href="http://flowcode.com.ar" target="_blank"><img
                     src="{{ asset('bundles/flowcodedashboard/images/flowcode-fav-oficial-alpha.png') }}" width="35"></a>
