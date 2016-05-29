@@ -12,5 +12,13 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
+    amulen.dashboard.repository.setting:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments:
+            - Flowcode\DashboardBundle\Entity\Setting
+
     amulen.dashboard.service.setting:
         class: Flowcode\DashboardBundle\Service\SettingService
+        arguments: ['@amulen.dashboard.repository.setting']

@@ -1,6 +1,7 @@
 <?php
 
 namespace Flowcode\DashboardBundle\Service;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * User: juanma
@@ -9,6 +10,29 @@ namespace Flowcode\DashboardBundle\Service;
  */
 class SettingService
 {
+
+    private $settingRepository;
+
+    /**
+     * SettingService constructor.
+     * @param $settingRepository
+     */
+    public function __construct(EntityRepository $settingRepository)
+    {
+        $this->settingRepository = $settingRepository;
+    }
+
+    public function getValue($settingName)
+    {
+        $setting = $this->settingRepository->findOneBy(array(
+            'name' => $settingName,
+        ));
+        if ($setting) {
+            return $setting->getValue();
+        }
+        return null;
+    }
+
 
     public function currentVersion()
     {
