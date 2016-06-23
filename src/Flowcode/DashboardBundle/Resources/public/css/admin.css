@@ -10,26 +10,28 @@ html, body {
     height: 100%;
     margin: 0 auto -4em;
 }
+
 .footer, .push {
     height: 4em;
 }
 
 .footer {
-    bottom:0;
+    bottom: 0;
     margin-top: 70px;
 }
+
 .footer p {
     margin-bottom: 0;
 }
 
-.logo-small{
+.logo-small {
     color: black;
     text-decoration: none;
     font-size: 16px;
     font-family: 'Lobster1.4';
 }
 
-#loading-spin{
+#loading-spin {
     position: absolute;
     z-index: 50;
     width: 50px;
@@ -39,80 +41,96 @@ html, body {
     display: none;
 }
 
-
-.btn-huge{
+.btn-huge {
     width: 100%;
     padding: 20px;
     margin-bottom: 5px;
 }
 
-.tile{
+.tile {
     margin-bottom: 5px;
 }
 
 .elfinder .elfinder-button {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
+.slider-container {
+    height: 210px;
+    width: 800px;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
 
-.slider-container{
-        height:210px; width: 800px; overflow: hidden;
-        position: relative;
-        background-color: black;
-    }
 .slider {
-    width: 2000px; position:relative; height:220px; left:0px;top:0px; display: block;
+    width: 2000px;
+    position: relative;
+    height: 220px;
+    left: 0px;
+    top: 0px;
+    display: block;
 }
-.slider li{
-     margin: 5px; 
-     width:200px; 
-     height: 200px; 
-     display:block; 
-     float:left;
+
+.slider li {
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    display: block;
+    float: left;
 }
-.thumb-body{
+
+.thumb-body {
     text-align: center;
     background-color: #ddd;
     padding: 5px;
 }
 
-.slider-container .slider-control{
+.slider-container .slider-control {
     height: 210px;
     width: 30px;
     position: absolute;
     display: block;
     top: 0px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
-.slider-container .slider-control > i{
+
+.slider-container .slider-control > i {
     position: absolute;
     top: 40%;
     font-size: 30px;
     color: whitesmoke;
 }
-.slider-container > .slider-left{
+
+.slider-container > .slider-left {
     left: 0px;
 }
-.slider-container > .slider-left i{
+
+.slider-container > .slider-left i {
     left: 10px;
 }
-.slider-container > .slider-right{
+
+.slider-container > .slider-right {
     right: 0px;
 }
-.slider-container > .slider-right i{
+
+.slider-container > .slider-right i {
     right: 10px;
 }
-.admin-menu{
-margin-top: 5px;
+
+.admin-menu {
+    margin-top: 5px;
 }
-.admin-menu-item{
+
+.admin-menu-item {
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 1px dashed #999;
 }
+
 .select2.addButton, .dropdown.addButton {
     float: left;
     width: 80%;
@@ -159,33 +177,43 @@ select.select2 {
 .select2-container {
     width: 100%;
 }
+
 table.treeTable td {
     border: 1px solid #eee;
 }
+
 .treeTable .level1 td:first-child {
     padding-left: 15px;
 }
+
 .treeTable .level2 td:first-child {
     padding-left: 30px;
 }
+
 .treeTable .level3 td:first-child {
     padding-left: 60px;
 }
+
 .treeTable .level4 td:first-child {
     padding-left: 90px;
 }
-.treeTable .collapse{
+
+.treeTable .collapse {
     display: table-row;
 }
+
 .treeTable .collapse .toggle.fa-caret-right {
     display: none;
 }
+
 .treeTable .expand .toggle.fa-caret-down {
     display: none;
 }
-.treeTable a{
+
+.treeTable a {
     margin-left: 15px;
 }
+
 .treeTable .toggle {
     height: 20px;
     width: 10px;

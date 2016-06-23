@@ -5,3 +5,20 @@ services:
 #    flowcode_dashboard.example:
 #        class: %flowcode_dashboard.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    amulen.dashboard.showmenu_eventsubscriber:
+        class: Flowcode\DashboardBundle\Event\ShowMenuSubscriber
+        arguments: ['@router', '@translator']
+        tags:
+            - { name: kernel.event_subscriber }
+
+    amulen.dashboard.repository.setting:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments:
+            - Flowcode\DashboardBundle\Entity\Setting
+
+    amulen.dashboard.service.setting:
+        class: Flowcode\DashboardBundle\Service\SettingService
+        arguments: ['@amulen.dashboard.repository.setting']

@@ -6,4 +6,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class FlowcodeDashboardBundle extends Bundle
 {
+    public function __construct()
+    {
+    }
+
 }

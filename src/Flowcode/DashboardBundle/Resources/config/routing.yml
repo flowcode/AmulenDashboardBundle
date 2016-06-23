@@ -5,3 +5,11 @@ flowcode_dashboard_homepage:
 admin_dashboard:
     resource: "@FlowcodeDashboardBundle/Controller/DefaultController.php"
     type:     annotation
+
+admin_plugin:
+    resource: "@FlowcodeDashboardBundle/Controller/PluginController.php"
+    type:     annotation
+
+admin_amulen_setting:
+    resource: "@FlowcodeDashboardBundle/Controller/SettingController.php"
+    type:     annotation
