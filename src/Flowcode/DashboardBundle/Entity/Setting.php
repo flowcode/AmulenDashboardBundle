@@ -14,6 +14,7 @@ class Setting
 {
 
     const SITE_NAME = "site_name";
+    const SITE_URL = "site_url";
     const HOME_SLUG = "home_slug";
     const ACTIVE_THEME = "active_theme";
 

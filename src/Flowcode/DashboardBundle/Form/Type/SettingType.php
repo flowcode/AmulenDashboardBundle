@@ -19,6 +19,7 @@ class SettingType extends AbstractType
             ->add('name', ChoiceType::class, array(
                 'choices' => array(
                     Setting::SITE_NAME => Setting::SITE_NAME,
+                    Setting::SITE_URL => Setting::SITE_URL,
                     Setting::HOME_SLUG => Setting::HOME_SLUG,
                     Setting::ACTIVE_THEME => Setting::ACTIVE_THEME,
                 ),
