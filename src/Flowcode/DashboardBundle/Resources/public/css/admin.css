@@ -121,6 +121,14 @@ html, body {
     right: 10px;
 }
 
+.amulen-image-slider {
+
+}
+
+.amulen-image-slider-img {
+    max-width: 80%;
+}
+
 .admin-menu {
     margin-top: 5px;
 }
