@@ -1,6 +1,7 @@
 <?php
 
 namespace Flowcode\DashboardBundle\Event;
+
 use Symfony\Component\EventDispatcher\Event;
 
 /**

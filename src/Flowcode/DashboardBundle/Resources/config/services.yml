@@ -22,3 +22,10 @@ services:
     amulen.dashboard.service.setting:
         class: Flowcode\DashboardBundle\Service\SettingService
         arguments: ['@amulen.dashboard.repository.setting']
+
+    amulen.dashboard.service.job_heart:
+        class: Flowcode\DashboardBundle\Service\JobHeartService
+        arguments:
+          - '@event_dispatcher'
+          - "%kernel.root_dir%"
+          - "%kernel.environment%"

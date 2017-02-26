@@ -13,3 +13,7 @@ admin_plugin:
 admin_amulen_setting:
     resource: "@FlowcodeDashboardBundle/Controller/SettingController.php"
     type:     annotation
+
+admin_amulen_job:
+    resource: "@FlowcodeDashboardBundle/Controller/JobController.php"
+    type:     annotation
