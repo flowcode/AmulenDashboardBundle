@@ -3,6 +3,7 @@
 namespace Flowcode\DashboardBundle\Form\Type;
 
 use Flowcode\DashboardBundle\Entity\Setting;
+use Flowcode\DashboardBundle\Service\SettingService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -10,6 +11,32 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class SettingType extends AbstractType
 {
+
+    /**
+     * @var SettingService
+     */
+    protected $settingService;
+
+    /**
+     * SettingType constructor.
+     * @param SettingService $settingService
+     */
+    public function __construct(SettingService $settingService)
+    {
+        $this->settingService = $settingService;
+    }
+
+    private function getChoices()
+    {
+        $choices = [];
+        $settingOptions = $this->settingService->getAll();
+        foreach ($settingOptions as $settingOption) {
+            $choices[$settingOption['key']] = $settingOption['label'];
+        }
+        return $choices;
+    }
+
+
     /**
      * {@inheritdoc}
      */
@@ -17,12 +44,7 @@ class SettingType extends AbstractType
     {
         $builder
             ->add('name', ChoiceType::class, array(
-                'choices' => array(
-                    Setting::SITE_NAME => Setting::SITE_NAME,
-                    Setting::SITE_URL => Setting::SITE_URL,
-                    Setting::HOME_SLUG => Setting::HOME_SLUG,
-                    Setting::ACTIVE_THEME => Setting::ACTIVE_THEME,
-                ),
+                'choices' => $this->getChoices(),
             ))
             ->add('value');
     }

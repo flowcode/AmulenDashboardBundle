@@ -29,9 +29,9 @@ class SettingController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('FlowcodeDashboardBundle:Setting')->findAll();
-        
+
         return array(
-            'entities'  => $entities,
+            'entities' => $entities,
         );
     }
 
@@ -43,16 +43,17 @@ class SettingController extends Controller
      * @Template()
      */
     public function showAction(Setting $setting)
-    {        $editForm = $this->createForm(new SettingType(), $setting, array(
+    {
+        $editForm = $this->createForm($this->get('amulen.dashboard.form.setting'), $setting, array(
             'action' => $this->generateUrl('admin_amulen_setting_update', array('id' => $setting->getid())),
             'method' => 'PUT',
         ));
-                $deleteForm = $this->createDeleteForm($setting->getId(), 'admin_amulen_setting_delete');
+        $deleteForm = $this->createDeleteForm($setting->getId(), 'admin_amulen_setting_delete');
 
         return array(
 
-        'setting' => $setting,        'edit_form'   => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
+            'setting' => $setting, 'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
 
         );
     }
@@ -67,11 +68,11 @@ class SettingController extends Controller
     public function newAction()
     {
         $setting = new Setting();
-        $form = $this->createForm(new SettingType(), $setting);
+        $form = $this->createForm($this->get('amulen.dashboard.form.setting'), $setting);
 
         return array(
             'setting' => $setting,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -85,7 +86,7 @@ class SettingController extends Controller
     public function createAction(Request $request)
     {
         $setting = new Setting();
-        $form = $this->createForm(new SettingType(), $setting);
+        $form = $this->createForm($this->get('amulen.dashboard.form.setting'), $setting);
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($setting);
@@ -96,7 +97,7 @@ class SettingController extends Controller
 
         return array(
             'setting' => $setting,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -109,7 +110,7 @@ class SettingController extends Controller
      */
     public function updateAction(Setting $setting, Request $request)
     {
-        $editForm = $this->createForm(new SettingType(), $setting, array(
+        $editForm = $this->createForm($this->get('amulen.dashboard.form.setting'), $setting, array(
             'action' => $this->generateUrl('admin_amulen_setting_update', array('id' => $setting->getid())),
             'method' => 'PUT',
         ));
@@ -122,7 +123,7 @@ class SettingController extends Controller
 
         return array(
             'setting' => $setting,
-            'edit_form'   => $editForm->createView(),
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -148,8 +149,8 @@ class SettingController extends Controller
     /**
      * Create Delete form
      *
-     * @param integer                       $id
-     * @param string                        $route
+     * @param integer $id
+     * @param string $route
      * @return \Symfony\Component\Form\Form
      */
     protected function createDeleteForm($id, $route)
@@ -157,8 +158,7 @@ class SettingController extends Controller
         return $this->createFormBuilder(null, array('attr' => array('id' => 'delete')))
             ->setAction($this->generateUrl($route, array('id' => $id)))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 
 }

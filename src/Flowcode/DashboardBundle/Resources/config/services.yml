@@ -2,13 +2,22 @@ parameters:
 #    flowcode_dashboard.example.class: Flowcode\DashboardBundle\Example
 
 services:
-#    flowcode_dashboard.example:
-#        class: %flowcode_dashboard.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+    amulen.dashboard.form.setting:
+        class: Flowcode\DashboardBundle\Form\Type\SettingType
+        arguments: ['@amulen.dashboard.service.setting']
+        tags:
+            - { name: form.type, alias: block_type }
 
     amulen.dashboard.showmenu_eventsubscriber:
         class: Flowcode\DashboardBundle\Event\ShowMenuSubscriber
         arguments: ['@router', '@translator']
+        tags:
+            - { name: kernel.event_subscriber }
+
+    amulen.dashboard.collect_setting_options_subscriber:
+        class: Flowcode\DashboardBundle\Event\CollectSettingOptionsSubscriber
+        arguments: ['@translator']
         tags:
             - { name: kernel.event_subscriber }
 
@@ -21,7 +30,9 @@ services:
 
     amulen.dashboard.service.setting:
         class: Flowcode\DashboardBundle\Service\SettingService
-        arguments: ['@amulen.dashboard.repository.setting']
+        arguments:
+          - '@amulen.dashboard.repository.setting'
+          - '@event_dispatcher'
 
     amulen.dashboard.service.job_heart:
         class: Flowcode\DashboardBundle\Service\JobHeartService
