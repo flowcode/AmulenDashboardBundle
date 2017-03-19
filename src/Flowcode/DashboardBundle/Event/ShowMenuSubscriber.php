@@ -47,12 +47,6 @@ class ShowMenuSubscriber implements EventSubscriberInterface
             "icon" => "fa fa-dashboard",
             "url" => $this->router->generate('admin_dashboard'),
             "title" => $this->translator->trans('Dashboard'),
-            "submenu" => array(
-                array(
-                    "url" => $this->router->generate('admin_dashboard'),
-                    "title" => $this->translator->trans('Dashboard'),
-                ),
-            ),
         );
 
         $event->setMenuOptions($menuOptions);

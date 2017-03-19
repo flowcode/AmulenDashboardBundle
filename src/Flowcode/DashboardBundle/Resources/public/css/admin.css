@@ -20,6 +20,11 @@ html, body {
     margin-top: 70px;
 }
 
+.logo span {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+
 .footer p {
     margin-bottom: 0;
 }

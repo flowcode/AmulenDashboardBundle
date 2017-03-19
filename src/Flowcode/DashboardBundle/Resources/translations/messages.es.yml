@@ -27,6 +27,10 @@ Categorys: "categorías"
 Organizations: organizaciones
 Featured: destacado
 
+Developed by: Desarrollado por
+
+site_name: Nombre del sitio
+
 ## messages
 save_success: Los cambios fueron guardados.
 save_fail: Por favor verifique los datos.
