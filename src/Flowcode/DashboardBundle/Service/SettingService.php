@@ -2,6 +2,7 @@
 
 namespace Flowcode\DashboardBundle\Service;
 
+use Amulen\SettingsBundle\Model\SettingRepository;
 use Doctrine\ORM\EntityRepository;
 use Flowcode\DashboardBundle\Entity\Setting;
 use Flowcode\DashboardBundle\Event\CollectSettingOptionsEvent;
@@ -12,7 +13,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  * Date: 5/28/16
  * Time: 6:03 PM
  */
-class SettingService
+class SettingService implements SettingRepository
 {
 
     private $settingRepository;
