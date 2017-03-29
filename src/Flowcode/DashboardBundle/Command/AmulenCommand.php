@@ -41,6 +41,7 @@ abstract class AmulenCommand extends ContainerAwareCommand
         // Job init.
         $job = $this->getJob();
         $job->setStatus(Job::STATUS_DOING);
+        $job->setDescription($initMsg);
         $this->getEM()->flush();
 
         try {
@@ -48,18 +49,21 @@ abstract class AmulenCommand extends ContainerAwareCommand
             // Execute Task.
             $this->task($input, $output);
 
+            $doneMsg = date("Y-m-d H:i:s") . " - " . $this->getDescription() . " finished.";
+
             $job->setStatus(Job::STATUS_DONE_OK);
+            $job->setDescription($doneMsg);
             $this->getEM()->flush();
 
 
             // Finish message.
-            $doneMsg = date("Y-m-d H:i:s") . " - " . $this->getDescription() . " finished.";
             $this->getContainer()->get("logger")->info($doneMsg);
             $output->writeln($doneMsg);
 
         } catch (\Exception $exception) {
 
             $job->setStatus(Job::STATUS_DONE_FAIL);
+            $job->setDescription($exception->getMessage());
             $this->getEM()->flush();
 
         }

@@ -18,6 +18,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Description</th>
                         <th scope="col">Created</th>
                         <th scope="col">Updated</th>
                     </tr>
@@ -36,6 +37,7 @@
                             <td class="{{ statusClass }}">
                                 {{ job.status }}
                             </td>
+                            <td>{{ job.description }}</td>
                             <td>{{ job.created|date }}</td>
                             <td>{{ job.updated|date }}</td>
                         </tr>
