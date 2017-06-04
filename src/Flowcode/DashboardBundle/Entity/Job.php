@@ -57,7 +57,7 @@ class Job
     private $description;
 
     /**
-     * @var datetime $created
+     * @var \DateTime $created
      *
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -65,12 +65,19 @@ class Job
     protected $created;
 
     /**
-     * @var datetime $updated
+     * @var \DateTime $updated
      *
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
      */
     protected $updated;
+
+    /**
+     * @var \DateTime $lastRun
+     *
+     * @ORM\Column(name="last_successful_run", type="datetime", nullable=true)
+     */
+    protected $lastSuccessfulRun;
 
 
     /**
@@ -169,6 +176,22 @@ class Job
     public function setDescription(string $description)
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastSuccessfulRun()
+    {
+        return $this->lastSuccessfulRun;
+    }
+
+    /**
+     * @param \DateTime $lastSuccessfulRun
+     */
+    public function setLastSuccessfulRun(\DateTime $lastSuccessfulRun)
+    {
+        $this->lastSuccessfulRun = $lastSuccessfulRun;
     }
 
 

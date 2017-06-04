@@ -53,6 +53,7 @@ abstract class AmulenCommand extends ContainerAwareCommand
 
             $job->setStatus(Job::STATUS_DONE_OK);
             $job->setDescription($doneMsg);
+            $job->setLastSuccessfulRun(new \DateTime());
             $this->getEM()->flush();
 
 
