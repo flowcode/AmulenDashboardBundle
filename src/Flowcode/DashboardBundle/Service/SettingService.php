@@ -79,6 +79,29 @@ class SettingService implements SettingRepository
         return null;
     }
 
+    /**
+     * Get setting value.
+     *
+     * @param $key
+     * @return null|string
+     */
+    public function getByKey($key)
+    {
+        /**
+         * @var Setting $setting
+         */
+        $settings = $this->settingRepository->findBy(array(
+            'name' => $key,
+        ));
+        $return = array();
+        if ($settings) {
+            foreach ($settings as $setting) {
+                $return[] = strtolower($setting->getValue());
+            }
+        }
+        return $return;
+    }
+
 
     public function currentVersion()
     {
