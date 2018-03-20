@@ -65,6 +65,24 @@ class SettingService implements SettingRepository
      * @param $key
      * @return null|string
      */
+    public function getOneByKey($key)
+    {
+        /**
+         * @var Setting $setting
+         */
+        $setting = $this->settingRepository->findOneBy(array(
+            'name' => $key,
+        ));
+
+        return $setting;
+    }
+
+    /**
+     * Get setting value.
+     *
+     * @param $key
+     * @return null|string
+     */
     public function get($key)
     {
         /**
